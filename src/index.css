@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Definimos la animación 'popIn' */
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) translateY(10px);
+    }
+    70% {
+      transform: scale(1.02) translateY(-2px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* Creamos la clase de utilidad para usar en Tailwind */
+  .animate-pop-in {
+    animation: popIn 0.35s ease-out forwards;
+    /* Evita parpadeos antes de la animación */
+    backface-visibility: hidden; 
+  }
+}
